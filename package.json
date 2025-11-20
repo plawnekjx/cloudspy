@@ -4,10 +4,10 @@
   "description": "oSpy",
   "repository": {
     "type": "git",
-    "url": "git://github.com/frida/ospy"
+    "url": "git://github.com/plawnekjx/ospy"
   },
   "keywords": [
-    "frida"
+    "plawnekjx"
   ],
   "author": "Ole André Vadla Ravnås",
   "license": "GPL",

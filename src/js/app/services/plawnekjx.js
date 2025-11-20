@@ -1,9 +1,9 @@
 define(['app/services/service', 'app/utils'], function (Service, utils) {
     'use strict';
 
-    var FRIDA_MIME_TYPE = 'application/x-vnd-frida';
+    var PLAWNEKJX_MIME_TYPE = 'application/x-vnd-plawnekjx';
 
-    var Frida = Service.define({
+    var Plawnekjx = Service.define({
         initialize: function initialize() {
             this.devices = null;
             this._state = 'disabled';
@@ -100,7 +100,7 @@ define(['app/services/service', 'app/utils'], function (Service, utils) {
             this._plugin.style.left = "-1px";
             this._plugin.style.width = "1px";
             this._plugin.style.height = "1px";
-            this._plugin.type = FRIDA_MIME_TYPE;
+            this._plugin.type = PLAWNEKJX_MIME_TYPE;
             document.body.appendChild(this._plugin);
             this._plugin.addEventListener('devices-changed', this._updateDevices);
             this._plugin.addEventListener('detach', this._onDetach);
@@ -426,7 +426,7 @@ define(['app/services/service', 'app/utils'], function (Service, utils) {
     var pluginIsInstalled = function pluginIsInstalled() {
         var mimeTypes = window.navigator.mimeTypes;
         for (var i = 0; i !== mimeTypes.length; i++) {
-            if (mimeTypes[i].type === FRIDA_MIME_TYPE) {
+            if (mimeTypes[i].type === PLAWNEKJX_MIME_TYPE) {
                 return true;
             }
         }
@@ -437,5 +437,5 @@ define(['app/services/service', 'app/utils'], function (Service, utils) {
         return deviceId + "|" + processId;
     };
 
-    return Frida;
+    return Plawnekjx;
 });

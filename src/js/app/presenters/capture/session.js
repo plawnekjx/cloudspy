@@ -11,7 +11,7 @@ define(['app/presenters/presenter'], function (Presenter) {
             Object.defineProperty(this, 'deviceId', {value: deviceId});
             Object.defineProperty(this, 'processId', {value: processId});
 
-            this._session = this.services.frida.getSession(deviceId, processId);
+            this._session = this.services.plawnekjx.getSession(deviceId, processId);
 
             this.view.update({
                 attached: false,

@@ -17,27 +17,27 @@ define(['app/presenters/presenter', 'app/views/capture/session', 'app/presenters
 
             this._handler = {
                 enable: function enable() {
-                    this.view.update({'frida-enabled': true});
+                    this.view.update({'plawnekjx-enabled': true});
                 },
                 disable: function disable() {
-                    this.view.update({'frida-enabled': false});
+                    this.view.update({'plawnekjx-enabled': false});
                     if (this._loading.state() === 'pending') {
                         this.view.flushUpdates();
                         this._loading.resolve();
                     }
                 },
                 update: function update() {
-                    this.view.update({devices: this.services.frida.devices});
+                    this.view.update({devices: this.services.plawnekjx.devices});
                     if (this._loading.state() === 'pending') {
                         this.view.flushUpdates();
                         this._loading.resolve();
                     }
                 }
             };
-            this.services.frida.addHandler(this._handler, this);
+            this.services.plawnekjx.addHandler(this._handler, this);
         },
         dispose: function dispose() {
-            this.services.frida.removeHandler(this._handler);
+            this.services.plawnekjx.removeHandler(this._handler);
 
             this.view.events.off('attach', this._onAttach);
             this.view.events.off('device-selected', this._onDeviceSelected);
@@ -56,7 +56,7 @@ define(['app/presenters/presenter', 'app/views/capture/session', 'app/presenters
             return this._loading.promise();
         },
         _onDeviceSelected: function _onDeviceSelected(deviceId) {
-            this.services.frida.enumerateProcesses(deviceId).done(function updateProcesses(processes) {
+            this.services.plawnekjx.enumerateProcesses(deviceId).done(function updateProcesses(processes) {
                 this.view.update({processes: processes});
                 this._previouslySelectedDevice = deviceId;
             }.bind(this)).fail(function (error) {

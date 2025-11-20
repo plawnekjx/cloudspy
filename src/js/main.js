@@ -18,7 +18,7 @@ require.config({
     }
 });
 //>>excludeEnd('productionExclude');
-require(['app/views/app', 'app/presenters/app', 'app/services/messagebus', 'app/services/storage', 'app/services/settings', 'app/services/navigation', 'app/services/ospy', 'app/services/frida', 'lcss!css/app'], function onLoad(AppView, AppPresenter, MessageBus, Storage, Settings, Navigation, OSpy, Frida) {
+require(['app/views/app', 'app/presenters/app', 'app/services/messagebus', 'app/services/storage', 'app/services/settings', 'app/services/navigation', 'app/services/ospy', 'app/services/plawnekjx', 'lcss!css/app'], function onLoad(AppView, AppPresenter, MessageBus, Storage, Settings, Navigation, OSpy, Plawnekjx) {
     'use strict';
 
     var view,
@@ -30,7 +30,7 @@ require(['app/views/app', 'app/presenters/app', 'app/services/messagebus', 'app/
     services.settings = new Settings(services, ['ospy.host'], window.AppConfig);
     services.navigation = new Navigation(services);
     services.ospy = new OSpy(services);
-    services.frida = new Frida(services);
+    services.plawnekjx = new Plawnekjx(services);
 
     view = new AppView(document.getElementById('main'));
     presenter = new AppPresenter(view, services);
